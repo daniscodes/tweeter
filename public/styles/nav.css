@@ -17,3 +17,16 @@ nav > span{
   border-right: 20em;
   border-left: 20em;
 }
+
+.writeTweet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.arrow {
+  font-size: 20px;
+  color: red;
+}
