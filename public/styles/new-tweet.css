@@ -1,0 +1,53 @@
+.new-tweet {
+  display: flex;
+  padding-left: 4rem;
+  width: 90%;
+  margin-top: 2rem;
+} 
+
+#tweet-text {
+  width: 100%;
+  max-height: 2rem;
+  border-bottom: 3px solid rgb(83, 54, 16);
+}
+
+#tweet-text:hover {
+  border-bottom: 3px solid  #4056A1;
+}
+
+h2 {
+  padding: 1rem;
+}
+
+.newTweetTop {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 5px solid #5f5c53;
+  font-weight: 600;
+}
+.newTweetTop > textarea {
+  height: 40px;
+  color: #5f5c53;
+  background-color: transparent;
+  border: none;
+  resize: none;
+  outline: none;
+}
+
+.newTweetBottom {
+  font-family: "Bungee";
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.newTweetBottom > button {
+  background-color: #4056a1;
+  font-size: 1em;
+  color: #ffffff;
+  border: 0;
+  height: 2.5rem;
+  width: 7rem;
+}

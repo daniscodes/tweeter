@@ -12,7 +12,8 @@
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/header.css"
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
   <!-- Google Fonts -->
 
@@ -43,30 +44,34 @@
       <i class="fas fa-angle-double-down arrow"></i>
     </div>
   </nav>
- 
+
   <header>
     <div>
-        <img src="/images/profile-hex.png"> 
+      <img src="/images/profile-hex.png">
     </div>
     <br>
     <div>
-        <h2>Your Name</h2>
+      <h2>Your Name</h2>
     </div>
-</header>
+  </header>
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-  <section class="new-tweet">
-    <h2>Compose Tweet</h2>
-    <form>
-      <label for="tweet-text">What are you humming about?</label>
-      <textarea name="text" id="tweet-text"></textarea>
-      <div>
-        <button type="submit">Tweet</button>
-        <output name="counter" class="counter" for="tweet-text">140</output>
-      </div>
-    </form>
-  </section>
+
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form class="composeTweet method="POST" action="/tweets">
+        <div class="newTweetTop"> 
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
+        </div>
+        <div class="newTweetBottom">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+
   </main>
 </body>
 
