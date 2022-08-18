@@ -1,9 +1,15 @@
 #tweet-bin {
-  display:flex;
+  display: flex;
   flex-direction: column;
   margin-top: 10 rem;
 }
 
+.tweet-header:after,
+.tweet-footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 article.tweet {
   position: relative;
@@ -17,7 +23,7 @@ article.tweet {
   z-index: inherit;
 }
 
-article.tweet > header {
+article.tweet>header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -26,7 +32,7 @@ article.tweet > header {
   height: 3em;
 }
 
-article.tweet > header > h4 {
+article.tweet>header>h4 {
   display: none;
   color: #99a9e0;
   font-size: 22px;
@@ -64,15 +70,16 @@ div.user {
   opacity: 0.7;
 }
 
-header > div.user > img {
+header>div.user>img {
   height: 50px;
 }
-header > div.user > p {
+
+header>div.user>p {
   margin-left: 10px;
   font-size: 23px;
 }
 
-article.tweet > p {
+article.tweet>p {
   overflow-wrap: break-word;
   border-bottom: 4px solid #5f5c53;
   padding-right: 10px;
@@ -84,7 +91,7 @@ article.tweet > p {
   color: rgb(95, 92, 83, 0.7);
 }
 
-article.tweet > footer {
+article.tweet>footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -99,19 +106,22 @@ article.tweet:hover {
   box-shadow: 7px 7px #99a9e0;
 }
 
-article.tweet:hover > header > h4 {
+article.tweet:hover>header>h4 {
   display: flex;
 }
-article.tweet:hover > header > div.user {
+
+article.tweet:hover>header>div.user {
   opacity: 1;
 }
 
-.tweetbin-footer{
+.tweetbin-footer {
   color: #4056a1;
 }
 
 footer {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   border-top: 1px solid #ccc;
   font-size: 75%;
   background-color: #f2d8cf;
@@ -123,8 +133,20 @@ footer {
 }
 
 .icons {
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 5%;
-  margin-right: 1%;
+  position: absolute;
+  bottom: 30px;
+  right: 50px;;
+
+}
+
+.fa-flag:hover {
+  color: red;
+}
+
+.fa-retweet:hover {
+  color: red;
+}
+
+.fa-heart:hover {
+  color: red;
 }
