@@ -14,7 +14,8 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-
+  <link rel="stylesheet" href="/styles/tweet-bin.css" type="text/css" />
+ 
   <!-- Google Fonts -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,16 +40,16 @@
 </head>
 
 <body>
-  <!-- Top nav bar (fixed) -->
+  <!-- Top nav bar -->
   <nav>
     <span>tweeter</span>
     <div class="writeTweet">
       <span> <span class="bold"> Write </span> a new tweet</span>
-      <i class="fas fa-angle-double-down arrow"></i>
+      <a href="#tweet"><i class="fas fa-angle-double-down arrow"></i></a>
     </div>
   </nav>
 
-  <header>
+  <header class="profile-header">
     <div>
       <img src="/images/profile-hex.png">
     </div>
@@ -61,24 +62,40 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form action="/tweets" method="POST" id="composeTweet">
-        <div class="newTweetTop">
-        <label for="tweet-text">What's on your mind</label>
-        </div>
-        <textarea
-          name="text"
-          class="tweet-text"
-          id="tweet-text"
-          placeholder="Compose Tweet"
-        ></textarea>
-        <div class="newTweetBottom">
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
+      <img src="/images/compose-blog.png" id="compose-logo">
+      <div class="all-tweets">
+        <form action="/tweets" method="POST" id="composeTweet">
+          <div class="newTweetTop">
+            <label for="tweet-text">What's on your mind?</label>
+          </div>
+          <textarea name="text" class="tweet-text" id="tweet-text" placeholder="Compose Tweet Here"></textarea>
+          <div class="newTweetBottom">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+
+        <article class="tweet">
+          <header>
+            <img src="/images/profile-hex.png" id="avatar">
+          </header>
+          <div class="tweet-content">
+            <p class="tweet-detail"> Tweet Tweet</p>
+          </div>
+          <footer>
+            <div class="time-ago">
+              <p> 1 minute ago </p>
+            </div>
+            <div class="icons">
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-arrows-retweet"></i>
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <footer>
+        </article>
+      </div>
     </section>
-    <section class="tweet-history" id="tweets-container"> </section>
   </main>
-</body>
-</html>
+  </body>
+  
+  </html>
