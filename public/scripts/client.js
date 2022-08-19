@@ -26,6 +26,7 @@ const data = [
   }
 ]
 
+// DOM using jQuery
 const createTweetElement = function (data) {
   let $tweet = $(`
   <article class="tweet">
@@ -58,9 +59,23 @@ const renderTweet = function (data) {
   }
 }
 
+// AJAX
+const loadTweets = function() {
+  $.ajax('/tweets', { method: 'GET' })
+    .then((tweets) => {
+      console.log(tweets)
+      return tweets;
+    })
+    .catch((err) => {
+      console.log("There was an ERROR ", err)
+    })
+};
+
+loadTweets()
+
 $(document).ready(function () {
 
-  console.log('document is ready')
+  console.log('document is readyyy')
 
   $('form.composeTweet').on('submit', function (event) {
     console.log('tweet submitted!');
