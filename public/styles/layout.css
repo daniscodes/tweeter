@@ -21,13 +21,16 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.container {
+.content {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  margin-left: 5%;
-  margin-right: 5%;
+  flex-flow: row wrap;
+  justify-content:space-between;
+  width: 70vw;
+  margin: auto;
   background-color: #f4f1ec;
 }
 
+.tweetdata {
+  max-width: 70%; 
+  margin-top: 13%;
+} 
