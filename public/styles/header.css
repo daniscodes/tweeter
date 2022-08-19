@@ -1,3 +1,86 @@
+/* Repsonsive design styling and break points */
+@media only screen and (max-width: 768px) {
+  .nav {
+    font-size: large;
+    padding-bottom: 10px;
+  }
+  body {
+    font-size: 20px;;
+  }
+  .errors {
+    width: 90%;
+  }
+
+
+.profile-header {
+  display: flex;
+  margin-top: 120px;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+  background-color: #2c7800;
+  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+}
+
+  section {
+    display: flex;
+    width: 95%;
+    height: 50%;
+    align-self: center;
+    font-size: larger;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+ 
+  section {
+    display: flex;
+    width: 95%;
+    height: 50%;
+    align-self: center;
+    font-size: larger;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+
+  section {
+    font-size: larger;
+    
+  }
+
+  #tweet {
+    width: 100px;
+    height: 30vh;
+    color: #545149;
+  }
+  
+  .error {
+    width: 90%;
+  }
+
+  .profile-header {
+    max-height: 45vh;
+    min-width: 17vw;
+    height: 150px;
+    margin: 50px;
+    align-self: flex-start;
+  }
+
+  body {
+    color: #545149;
+    background-color: #f4f1ec;
+    font-size: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    padding: 100px;
+  }
+}
+
+
 .profile-header {
   display: flex;
   flex-flow: column;
@@ -10,6 +93,7 @@
   margin-inline: auto;
   background-color: #2c7800;
   background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+  margin-left: 2rem;
 }
 
 h2 {
