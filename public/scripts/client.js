@@ -32,11 +32,10 @@ const renderTweet = function (data) {
 }
 
 // AJAX
-const loadTweets = function() {
+const loadTweets = function () {
   $.ajax('/tweets', { method: 'GET' })
     .then((tweets) => {
-      console.log(tweets)
-      return tweets;
+      renderTweet(tweets)
     })
     .catch((err) => {
       console.log("There was an ERROR ", err)
@@ -57,11 +56,10 @@ $(document).ready(function () {
       data: $(this).serialize()
     })
       .then(function (tweet) {
-        console.log('Tweet has been sent to database :)');
         $('.tweet-text').val('')
       })
       .catch((err) => {
-        console.log('There was an error', err)
+        console.log('There was an error :(', err)
       })
   });
 
