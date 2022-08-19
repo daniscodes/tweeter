@@ -1,12 +1,49 @@
-.new-tweet {
-  display: flex;
-  padding-left: 4rem;
-  width: 90%;
+.error {
+  display: none;
+  margin: auto;
   margin-top: 2rem;
+  padding: 1rem;
+  border:red solid 2px;
+  min-height: 4rem;
 } 
 
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+} 
+
+.newTweetBottom {
+  font-family: "Bungee";
+  display: flex;
+  justify-content: space-between;
+}
+
+.newTweetBottom > button {
+  background-color: #4056a1;
+  font-size: 1em;
+  color: #ffffff;
+  border: 0;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.newTweetBottom > button:hover {
+  background-color: rgb(213, 19, 19);
+  color: white;
+}
+
+.newTweetTop {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  border-bottom: 5px solid #5f5c53;
+  font-weight: 600;
+}
+
 #tweet-text {
-  width: 30rem;
+  width: 100%;
+  border: none;
+  outline: none;
   height: 10rem;
   border-bottom: 3px solid rgb(83, 54, 16);
   color: #5f5c53;
@@ -24,10 +61,6 @@
   transition: .5s ease;
 }
 
-#composeTweet {
-  color:black;
-}
-
 #compose-logo {
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -40,42 +73,25 @@
 }
 
 
-.newTweetTop {
-  display: flex;
-  flex-direction: column;
-  border-bottom: 5px solid #5f5c53;
-  font-weight: 600;
-}
+@media only screen and (min-width: 1024px) {
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+  }
+  .media-query-row{
+    display: flex;
+    flex-direction: row;
+    margin: 50px;
+  }
+  .profile-header{
+    width: 500px;
+    height: 400px;
+    margin: 0 50px 0 0 ;
+    margin-left: 0px;
+  }
 
-.newTweetBottom {
-  font-family: "Bungee";
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 10px;
-  width: 100%;
+  
+  
 }
-
-.newTweetBottom > button {
-  background-color: #4056a1;
-  font-size: 1em;
-  color: #ffffff;
-  border: 0;
-  height: 2.5rem;
-  width: 7rem;
-  transition-duration: 0.4s;
-}
-
-.newTweetBottom > button:hover {
-  background-color: rgb(213, 19, 19);
-  color: white;
-}
-
-.error {
-  display: none;
-  margin: auto;
-  margin-top: 2rem;
-  padding: 1rem;
-  border:red solid 2px;
-  min-height: 4rem;
-} 

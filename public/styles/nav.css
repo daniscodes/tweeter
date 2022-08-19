@@ -32,3 +32,10 @@ nav > span{
   color: rgb(213, 19, 19);
   cursor: pointer;
 }
+
+@media only screen and (max-width: 1024px) {
+  .nav{
+    background-color: #00a6d9;
+    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  }
+}
