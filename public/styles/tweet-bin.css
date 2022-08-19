@@ -1,4 +1,4 @@
-#tweet-bin {
+.tweet-bin {
   display: flex;
   flex-direction: column;
   margin-top: 10rem;
