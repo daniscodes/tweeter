@@ -48,7 +48,7 @@
     <span>tweeter</span>
     <div class="writeTweet">
       <span> <span class="bold"> Write </span> a new tweet</span>
-      <a href="#tweet"><i class="fas fa-angle-double-down arrow"></i></a>
+      <a href="#tweet"><i class="fas fa-angle-double-down arrow" id='arrow'></i></a>
     </div>
   </nav>
 
@@ -72,7 +72,7 @@
     <section class="new-tweet">
       <img src="/images/compose-blog.png" id="compose-logo">
       <div class="all-tweets">
-        <form action="/tweets" method="POST" id="composeTweet">
+        <form action="/tweets" method="POST" id="composeTweet" class="textarea">
           <div class="newTweetTop">
             <label for="tweet-text">What's on your mind?</label>
           </div>

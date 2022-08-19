@@ -20,7 +20,7 @@ $(document).ready(function () {
       <img src="${tweet.user.avatars}" alt="">
       <p>${tweet.user.name}</p>
     </div>
-    <h4>${data.user.handle}</h4>
+    <h4>${tweet.user.handle}</h4>
   </header>
   <main>
   <p>
@@ -47,7 +47,7 @@ $(document).ready(function () {
   };
 
   const renderTweets = function (arr) {
-    const $container = $(".tweet-bin");
+    const $container = $(".container");
     $.each(arr, (key) => {
       $container.prepend(createTweetElement(arr[key]));
     });
@@ -55,22 +55,30 @@ $(document).ready(function () {
     return $container;
   };
 
-  $( ".textarea" ).submit(function( event ) {
-    $('#empty').slideUp();
-    $('#long-error').slideUp();
-  
-    const newTweetData = event.target[0].value
-    if (!newTweetData) {
-      return $('#empty').slideDown()
-    }
+//Submits form
+const $form = $(".textarea");
 
-    if (newTweetData.length > 2) {
-      return $('#long-error').slideDown()
-    }
+$form.submit(function (event) {
+  event.preventDefault();
+ 
+  $("#empty").slideUp();
+  $("#long-error").slideUp();
+  $(".new-tweet").slideUp();
+  //form validation 
+  const newTweetData = event.target[0].value;
+  if (!newTweetData) {
+    $("#empty").slideDown();
+    $(".new-tweet").slideDown();
+    return;
+  }
 
+  if (newTweetData.length > 140) {
+    $("#long-error").slideDown();
+    $(".new-tweet").slideDown();
+    return;
+  }
 
     // AJAX
-
     $.ajax({
       method: "POST",
       url: "http://localhost:8080/tweets",
@@ -80,7 +88,9 @@ $(document).ready(function () {
     });
   });
 
+
   const loadTweets = function () {
+    
     $.ajax({
       method: "GET",
       url: "http://localhost:8080/tweets",

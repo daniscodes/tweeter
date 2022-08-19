@@ -30,4 +30,5 @@ nav > span{
 .arrow {
   font-size: 20px;
   color: rgb(213, 19, 19);
+  cursor: pointer;
 }
