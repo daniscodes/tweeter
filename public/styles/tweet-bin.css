@@ -1,6 +1,8 @@
 .tweet-bin {
   display: flex;
   flex-direction: column;
+  flex-flow: row wrap;
+  height: fit-content;
   margin-top: 10rem;
 }
 
@@ -21,6 +23,7 @@ article.tweet {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  flex-flow: flow wrap;
   border: 4px solid #5f5c53;
   padding: 0.7em;
   margin: 10px 0px;
@@ -35,6 +38,7 @@ article.tweet>header {
   align-items: center;
   align-content: center;
   height: 3em;
+  min-width: 50rem;
 }
 
 article.tweet>header>h4 {
@@ -45,6 +49,7 @@ article.tweet>header>h4 {
 
 #avatar {
   display: inline-flex;
+  flex-direction: row;
   border: 1px solid #ddd;
   border-radius: 25px;
   padding: 5px;
@@ -67,6 +72,7 @@ article.tweet>header>h4 {
 .user-name {
   display: inline-flex;
   font-size: 85%;
+  padding-left: 3rem;
 }
 
 div.user {
