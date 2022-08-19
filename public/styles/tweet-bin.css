@@ -11,6 +11,11 @@
   clear: both;
 }
 
+p {
+  font-weight: 500;
+  padding: 2vh;
+}
+
 article.tweet {
   position: relative;
   border-radius: 5px;

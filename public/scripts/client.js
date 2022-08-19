@@ -7,15 +7,17 @@ $(document).ready(function () {
   };
 
   // DOM using jQuery
+  $("#arrow").click(function () {
+    $(".new-tweet").slideDown();
+  });
+
   const createTweetElement = function (tweet) {
 
     let $tweet = $(`
   <article class="tweet">
   <header>
     <div class="user">
-      <img
-        src="${tweet.user.avatars}"
-        alt="">
+      <img src="${tweet.user.avatars}" alt="">
       <p>${tweet.user.name}</p>
     </div>
     <h4>${data.user.handle}</h4>
@@ -53,26 +55,17 @@ $(document).ready(function () {
     return $container;
   };
 
-  const $form = $(".textarea");
-
-  $form.submit(function (event) {
-    event.preventDefault();
-    //cleans up any leftover error messages
-    $("#empty").slideUp();
-    $("#long-error").slideUp();
-    $(".new-tweet").slideUp();
-    //form validation checks
-    const newTweetData = event.target[0].value;
+  $( ".textarea" ).submit(function( event ) {
+    $('#empty').slideUp();
+    $('#long-error').slideUp();
+  
+    const newTweetData = event.target[0].value
     if (!newTweetData) {
-      $("#empty").slideDown();
-      $(".new-tweet").slideDown();
-      return;
+      return $('#empty').slideDown()
     }
 
-    if (newTweetData.length > 140) {
-      $("#long-error").slideDown();
-      $(".new-tweet").slideDown();
-      return;
+    if (newTweetData.length > 2) {
+      return $('#long-error').slideDown()
     }
 
 
