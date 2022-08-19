@@ -26,7 +26,7 @@ const data = [
   }
 ]
 
-const createTweetElement = function(data) {
+const createTweetElement = function (data) {
   let $tweet = $(`
   <article class="tweet">
   <header>
@@ -52,12 +52,31 @@ const createTweetElement = function(data) {
   return $tweet;
 };
 
-const renderTweet = function(data) {
+const renderTweet = function (data) {
   for (let tweet of data) {
     $('#tweets-bin').append(createTweetElement(tweet));
   }
 }
 
-$(document).ready(function() {
- renderTweet(data);
+$(document).ready(function () {
+
+  console.log('document is ready')
+
+  $('form.composeTweet').on('submit', function (event) {
+    console.log('tweet submitted!');
+    event.preventDefault();
+    $.ajax('/tweets', {
+      method: 'POST',
+      data: $(this).serialize()
+    })
+      .then(function (tweet) {
+        console.log('Tweet has been sent to database :)');
+        $('.tweet-text').val('')
+      })
+      .catch((err) => {
+        console.log('There was an error', err)
+      })
+  });
+
+  renderTweet(data);
 }); 
