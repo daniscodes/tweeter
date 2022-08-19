@@ -7,9 +7,9 @@ $(document).ready(function () {
   };
 
   // DOM using jQuery
-const createTweetElement = function (tweet) {
+  const createTweetElement = function (tweet) {
 
-  let $tweet = $(`
+    let $tweet = $(`
   <article class="tweet">
   <header>
     <div class="user">
@@ -25,8 +25,8 @@ const createTweetElement = function (tweet) {
     ${escape(
       tweet.content.text.length > 60
         ? tweet.content.text.slice(0, 60) +
-            "\n" +
-            tweet.content.text.slice(60, tweet.content.text.length)
+        "\n" +
+        tweet.content.text.slice(60, tweet.content.text.length)
         : tweet.content.text
     )}
   </p>
@@ -41,47 +41,61 @@ const createTweetElement = function (tweet) {
   </footer>
 </article>
   `);
-  return $tweet;
-};
+    return $tweet;
+  };
 
-const renderTweets = function (arr) {
-  const $container = $(".tweet-bin");
-  $.each(arr, (key) => {
-    $container.prepend(createTweetElement(arr[key]));
-  });
+  const renderTweets = function (arr) {
+    const $container = $(".tweet-bin");
+    $.each(arr, (key) => {
+      $container.prepend(createTweetElement(arr[key]));
+    });
 
-  return $container;
-};
-// AJAX
-const loadTweets = function () {
-  $.ajax('/tweets', { method: 'GET' })
-    .then((tweets) => {
-      renderTweet(tweets)
-    })
-    .catch((err) => {
-      console.log("There was an ERROR ", err)
-    })
-};
+    return $container;
+  };
 
-loadTweets()
+  const $form = $(".textarea");
 
-
-  console.log('document is readyyy')
-
-  $('form.composeTweet').on('submit', function (event) {
-    console.log('tweet submitted!');
+  $form.submit(function (event) {
     event.preventDefault();
-    $.ajax('/tweets', {
-      method: 'POST',
+    //cleans up any leftover error messages
+    $("#empty").slideUp();
+    $("#long-error").slideUp();
+    $(".new-tweet").slideUp();
+    //form validation checks
+    const newTweetData = event.target[0].value;
+    if (!newTweetData) {
+      $("#empty").slideDown();
+      $(".new-tweet").slideDown();
+      return;
+    }
+
+    if (newTweetData.length > 140) {
+      $("#long-error").slideDown();
+      $(".new-tweet").slideDown();
+      return;
+    }
+
+
+    // AJAX
+
+    $.ajax({
+      method: "POST",
+      url: "http://localhost:8080/tweets",
       data: $(this).serialize()
-    })
-      .then(function (tweet) {
-        $('.tweet-text').val('')
-      })
-      .catch((err) => {
-        console.log('There was an error!!!!', err)
-      })
+    }).then(function () {
+      loadTweets();
+    });
   });
 
-  renderTweet(data);
-}); 
+  const loadTweets = function () {
+    $.ajax({
+      method: "GET",
+      url: "http://localhost:8080/tweets",
+    }).then(function (tweet) {
+      renderTweets(tweet);
+      //resets the form
+      document.querySelector(".textarea").reset();
+    });
+  };
+  loadTweets();
+});
