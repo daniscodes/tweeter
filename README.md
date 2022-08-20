@@ -16,3 +16,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Screenshot of small screen layout"](https://github.com/daniscodes/tweeter/blob/master/docs/Screen%20Shot%202022-08-20%20at%207.24.52%20PM.png)
+!["Screenshot of small screen layout"](https://github.com/daniscodes/tweeter/blob/master/docs/Screen%20Shot%202022-08-20%20at%207.25.40%20PM.png)
