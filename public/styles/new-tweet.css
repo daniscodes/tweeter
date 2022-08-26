@@ -3,14 +3,14 @@
   margin: auto;
   margin-top: 2rem;
   padding: 1rem;
-  border:red solid 2px;
+  border: red solid 2px;
   min-height: 4rem;
-} 
+}
 
 .new-tweet {
   display: flex;
   flex-direction: column;
-} 
+}
 
 .newTweetBottom {
   font-family: "Bungee";
@@ -18,7 +18,7 @@
   justify-content: space-between;
 }
 
-.newTweetBottom > button {
+.newTweetBottom>button {
   background-color: #4056a1;
   font-size: 1em;
   color: #ffffff;
@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 
-.newTweetBottom > button:hover {
+.newTweetBottom>button:hover {
   background-color: rgb(213, 19, 19);
   color: white;
 }
@@ -50,9 +50,9 @@
 }
 
 #tweet-text:hover {
-  border-bottom: 3px solid  #4056A1;
-  background-color:rgb(220, 210, 210);
-  color:black;
+  border-bottom: 3px solid #4056A1;
+  background-color: rgb(220, 210, 210);
+  color: black;
   font-weight: bold;
   opacity: 50%;
   transition: background-color 0.5s ease;
@@ -74,25 +74,25 @@
 
 
 @media only screen and (min-width: 1024px) {
-  body{
+  body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 0;
   }
-  .media-query-row{
+
+  .media-query-row {
     display: flex;
     flex-direction: row;
     margin: 50px;
     margin-top: 10rem;
   }
-  .profile-header{
+
+  .profile-header {
     width: 500px;
     height: 400px;
-    margin: 0 50px 0 0 ;
+    margin: 0 50px 0 0;
     margin-left: 0px;
   }
-
-  
   
 }

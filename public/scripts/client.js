@@ -56,28 +56,28 @@ $(document).ready(function () {
     return $container;
   };
 
-//Submits form
-const $form = $(".textarea");
+  //Submits form
+  const $form = $(".textarea");
 
-$form.submit(function (event) {
-  event.preventDefault();
- 
-  // $("#empty").slideUp();
-  // $("#long-error").slideUp();
-  // $(".new-tweet").slideUp();
-  //form validation 
-  const newTweetData = event.target[0].value;
-  // if (!newTweetData) {
-  //   $("#empty").slideDown();
-  //   $(".new-tweet").slideDown();
-  //   return;
-  // }
+  $form.submit(function (event) {
+    event.preventDefault();
 
-  if (newTweetData.length > 140) {
-    $("#long-error").slideDown();
-    $(".new-tweet").slideDown();
-    return;
-  }
+    // $("#empty").slideUp();
+    // $("#long-error").slideUp();
+    // $(".new-tweet").slideUp();
+    //form validation 
+    const newTweetData = event.target[0].value;
+    // if (!newTweetData) {
+    //   $("#empty").slideDown();
+    //   $(".new-tweet").slideDown();
+    //   return;
+    // }
+
+    if (newTweetData.length > 140) {
+      $("#long-error").slideDown();
+      $(".new-tweet").slideDown();
+      return;
+    }
 
     // AJAX
     $.ajax({
@@ -91,7 +91,7 @@ $form.submit(function (event) {
 
 
   const loadTweets = function () {
-    
+
     $.ajax({
       method: "GET",
       url: "http://localhost:8080/tweets",
