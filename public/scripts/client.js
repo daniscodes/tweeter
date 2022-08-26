@@ -62,16 +62,15 @@ $(document).ready(function () {
   $form.submit(function (event) {
     event.preventDefault();
 
-    // $("#empty").slideUp();
-    // $("#long-error").slideUp();
-    // $(".new-tweet").slideUp();
+    $("#empty").slideUp();
+    $("#long-error").slideUp();
     //form validation 
     const newTweetData = event.target[0].value;
-    // if (!newTweetData) {
-    //   $("#empty").slideDown();
-    //   $(".new-tweet").slideDown();
-    //   return;
-    // }
+    if (!newTweetData) {
+      $("#empty").slideDown();
+      $(".new-tweet").slideDown();
+      return;
+    }
 
     if (newTweetData.length > 140) {
       $("#long-error").slideDown();
