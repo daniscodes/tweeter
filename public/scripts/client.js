@@ -47,7 +47,8 @@ $(document).ready(function () {
   };
 
   const renderTweets = function (arr) {
-    const $container = $(".container");
+    const $container = $("#tweets-container");
+    $container.text('');
     $.each(arr, (key) => {
       $container.prepend(createTweetElement(arr[key]));
     });
@@ -61,16 +62,16 @@ const $form = $(".textarea");
 $form.submit(function (event) {
   event.preventDefault();
  
-  $("#empty").slideUp();
-  $("#long-error").slideUp();
-  $(".new-tweet").slideUp();
+  // $("#empty").slideUp();
+  // $("#long-error").slideUp();
+  // $(".new-tweet").slideUp();
   //form validation 
   const newTweetData = event.target[0].value;
-  if (!newTweetData) {
-    $("#empty").slideDown();
-    $(".new-tweet").slideDown();
-    return;
-  }
+  // if (!newTweetData) {
+  //   $("#empty").slideDown();
+  //   $(".new-tweet").slideDown();
+  //   return;
+  // }
 
   if (newTweetData.length > 140) {
     $("#long-error").slideDown();
